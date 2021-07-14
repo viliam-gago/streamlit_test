@@ -32,7 +32,7 @@ query = ''' SELECT
 
 st.set_page_config(
     page_title="Covid dashboard",
-    page_icon=":puke:",
+    page_icon="	\u1F92E",
     layout="wide",
     initial_sidebar_state="expanded",
 )
