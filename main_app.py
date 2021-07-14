@@ -30,6 +30,13 @@ query = ''' SELECT
             	AND recovered >= 0
         '''
 
+st.set_page_config(
+    page_title="Covid dashboard",
+    page_icon=":puke:",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
 @st.cache(allow_output_mutation=True)
 def get_connection():
     user = "student"
@@ -172,7 +179,7 @@ if mode == 'Globe':
     st.header('Confirmed cases on the globe')
     st.plotly_chart(fig)
 
-## grouped bar chart 
+## grouped bar chart
     df21 = df[['month_year','confirmed']].rename(columns={'confirmed':'value'})
     df21['measure'] = 'confirmed'
     df22 = df[['month_year','recovered']].rename(columns={'recovered':'value'})
