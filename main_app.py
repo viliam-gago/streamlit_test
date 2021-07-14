@@ -51,7 +51,7 @@ def data_load(query):
     return df
 
 
-def create_linechart(df, filter_continent, filter_country, xaxis, measure, blockname=st):
+def create_linechart(df, filter_continent, filter_country, xaxis, filter_measure, blockname=st):
     if filter_country:
         chrt = alt.Chart(df).mark_line(point=True).encode(
             x=f'{xaxis}',
