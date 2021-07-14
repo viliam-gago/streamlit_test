@@ -37,7 +37,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True, max_entries=10, ttl=3600)
 def get_connection():
     user = "student"
     password = "p7%40vw7MCatmnKjy7"
@@ -45,7 +45,7 @@ def get_connection():
     alchemy_conn = sqlalchemy.create_engine(conn_string)
     return alchemy_conn
 
-@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True, max_entries=10, ttl=3600)
 def data_load(query):
     df = pd.read_sql(query, get_connection())
     return df
